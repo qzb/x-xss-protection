@@ -9,7 +9,7 @@ module.exports = function xXssProtection (options) {
       var matches = /msie\s*(\d+)/i.exec(req.headers['user-agent'])
 
       var value
-      if (!matches || (parseFloat(matches[1]) >= 9)) {
+      if (!matches || (parseFloat(matches[1]) !== 8)) {
         value = '1; mode=block'
       } else {
         value = '0'
